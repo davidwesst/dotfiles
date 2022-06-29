@@ -23,7 +23,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-nnoremap <Esc> :noh<CR><CR>
+nnoremap <CR> :noh<CR><CR>
 
 " fix for starting in replace mode
 set t_u7=
