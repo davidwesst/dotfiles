@@ -11,9 +11,9 @@ install_or_update() {
 
 	if [ -d $DIR ] 
 	then
-		pushd $DIR
+		pushd $DIR 1> /dev/null
 		git pull --ff-only $REPO
-		popd
+		popd 1> /dev/null
 	else
 		mkdir -p $DIR 
 		git clone $REPO $DIR 
