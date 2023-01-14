@@ -31,3 +31,10 @@ AIRLINE_DIR=~/.vim/pack/vendor/start/vim-airline
 AIRLINE_REPO=https://github.com/vim-airline/vim-airline
 
 install_or_update $AIRLINE_DIR $AIRLINE_REPO
+
+# vim-polyglot
+POLYGLOT_DIR=~/.vim/pack/vendor/start/vim-polyglot
+POLYGLOT_REPO=https://github.com/sheerun/vim-polyglot
+
+install_or_update $POLYGLOT_DIR $POLYGLOT_REPO
+
