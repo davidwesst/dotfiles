@@ -2,8 +2,9 @@ SHELL = /bin/bash
 
 install:	
 	ln -s ~/dotfiles/.vimrc ~/.vimrc
-	ln -s ~/dotfiles/.vim ~/.vim
+	ln -s ~/dotfiles/vim ~/.vim
 	. ./install-plugins.sh
+	. ./install-fonts.sh
 
 uninstall:
 	unlink ~/.vim
@@ -15,3 +16,4 @@ update:
 clean:
 	rm -f ~/.vimrc
 	rm -rf ~/.vim
+	rm -f ~/.local/share/fonts/Cousine*.ttf
