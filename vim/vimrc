@@ -14,6 +14,7 @@ set number
 set relativenumber
 set signcolumn=yes
 set scrolloff=4
+set termguicolors
 
 set showcmd
 set noswapfile
