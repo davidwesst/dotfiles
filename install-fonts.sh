@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 install_fonts() {
-	FONT_DIR=~/dotfiles/fonts
+	FONT_DIR=~/.dotfiles/fonts
 	INSTALL_DIR=~/.local/share/fonts
 
 	mkdir -p $INSTALL_DIR
