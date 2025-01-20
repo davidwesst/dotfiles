@@ -9,7 +9,7 @@ Machine config files used by DW. A work-in-progress repo.
 These can both be installed through `build-essentials` or `devel_basis` on OpenSUSE.
 
 ### OpenSUSE
-`sudo zypper refresh && sudo zypper install devel_basis`
+`sudo zypper refresh && sudo zypper install -t pattern devel_basis`
 
 ## Install 
 
