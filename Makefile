@@ -5,6 +5,7 @@ install:
 	ln -s ~/.dotfiles/vim ~/.vim
 	. ./install-plugins.sh
 	. ./install-fonts.sh
+	. ./install-ohmybash.sh
 	. ./install-asdf.sh
 
 uninstall:
@@ -18,4 +19,5 @@ clean:
 	rm -f ~/.vimrc
 	rm -rf ~/.vim
 	rm -f ~/.local/share/fonts/Cousine*.ttf
+	rm -rf ~/.oh-my-bash/
 	rm -rf ~/.asdf/
