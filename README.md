@@ -22,7 +22,7 @@ cd ~/.dotfiles
 ## Install on macOS / Linux
 
 Use the Make target to copy the shared Vim config into the standard Unix Vim
-locations:
+locations and install the bundled plugin set:
 
 ```sh
 make vim-install
@@ -32,6 +32,7 @@ This installs:
 
 - `~/.vimrc`
 - `~/.vim/`
+- `~/.vim/pack/vendor/start/*`
 
 Optional plugin update:
 
