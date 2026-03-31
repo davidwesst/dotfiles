@@ -51,6 +51,18 @@ This keeps the shared config in the Windows-native Vim layout:
 - `%USERPROFILE%\_vimrc`
 - `%USERPROFILE%\vimfiles\`
 
+## Vim Keybindings
+
+The shared Vim config currently adds the following custom keybindings:
+
+- `<Ctrl-t>`: Toggle NERDTree.
+- `<Enter>` in normal mode: Clear search highlighting with `:noh`.
+
+Plugin-related behavior configured in this repo without extra custom mappings:
+
+- `vim-airline`: Enables Powerline fonts support and the tabline extension.
+- `vim-polyglot`: Installed for language pack support, with no repo-specific keybindings configured here.
+
 ## Notes
 
 - The shared Vim config creates an undo directory automatically.
