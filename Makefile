@@ -1,23 +1,28 @@
 SHELL = /bin/bash
+UNIX_VIM_HOME := $(HOME)/.vim
+UNIX_VIMRC := $(HOME)/.vimrc
 
-install:	
-	ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
-	ln -s ~/.dotfiles/vim ~/.vim
-	. ./install-plugins.sh
-	. ./install-fonts.sh
-	. ./install-ohmybash.sh
-	. ./install-asdf.sh
+.PHONY: install vim-install vim-uninstall update vim-update clean
 
-uninstall:
-	unlink ~/.vim
-	unlink ~/.vimrc
+install: vim-install
 
-update:
-	. ./install-plugins.sh
+vim-install:
+	mkdir -p "$(UNIX_VIM_HOME)"
+	cp -R vim/. "$(UNIX_VIM_HOME)/"
+	cp .vimrc "$(UNIX_VIMRC)"
+
+vim-uninstall:
+	rm -f "$(UNIX_VIMRC)"
+	rm -rf "$(UNIX_VIM_HOME)"
+
+update: vim-update
+
+vim-update:
+	./install-plugins.sh
 
 clean:
-	rm -f ~/.vimrc
-	rm -rf ~/.vim
+	rm -f "$(UNIX_VIMRC)"
+	rm -rf "$(UNIX_VIM_HOME)"
 	rm -f ~/.local/share/fonts/Cousine*.ttf
 	rm -rf ~/.oh-my-bash/
 	rm -rf ~/.asdf/
