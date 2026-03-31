@@ -55,3 +55,9 @@ POLYGLOT_DIR="${PLUGIN_ROOT}/vim-polyglot"
 POLYGLOT_REPO=https://github.com/sheerun/vim-polyglot
 
 install_or_update "vim-polyglot" "$POLYGLOT_DIR" "$POLYGLOT_REPO"
+
+# vim-godot
+VIM_GODOT_DIR="${PLUGIN_ROOT}/vim-godot"
+VIM_GODOT_REPO=https://github.com/habamax/vim-godot.git
+
+install_or_update "vim-godot" "$VIM_GODOT_DIR" "$VIM_GODOT_REPO"

@@ -14,9 +14,17 @@ vim-install:
 	fi
 	mkdir -p "$(UNIX_VIM_HOME)"
 	@echo "Copying shared Vim files..."
-	cp -R vim/. "$(UNIX_VIM_HOME)/"
+	@if [ "$$(cd vim && pwd -P)" = "$$(cd "$(UNIX_VIM_HOME)" && pwd -P)" ]; then \
+		echo "$(UNIX_VIM_HOME) already points to this repo; skipping file copy."; \
+	else \
+		cp -R vim/. "$(UNIX_VIM_HOME)/"; \
+	fi
 	@echo "Writing $(UNIX_VIMRC)..."
-	cp .vimrc "$(UNIX_VIMRC)"
+	@if [ "$$(cd "$$(dirname .vimrc)" && pwd -P)/$$(basename .vimrc)" = "$$(cd "$$(dirname "$(UNIX_VIMRC)")" && pwd -P)/$$(basename "$(UNIX_VIMRC)")" ]; then \
+		echo "$(UNIX_VIMRC) already points to this repo; skipping vimrc copy."; \
+	else \
+		cp .vimrc "$(UNIX_VIMRC)"; \
+	fi
 	@echo "Installing or updating Vim plugins..."
 	VIM_HOME="$(UNIX_VIM_HOME)" ./install-plugins.sh
 	@echo "Vim install completed successfully."

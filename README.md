@@ -62,6 +62,7 @@ Plugin-related behavior configured in this repo without extra custom mappings:
 
 - `vim-airline`: Enables Powerline fonts support and the tabline extension.
 - `vim-polyglot`: Installed for language pack support, with no repo-specific keybindings configured here.
+- `vim-godot`: Adds Godot filetype support, including GDScript syntax highlighting.
 
 ## Notes
 
