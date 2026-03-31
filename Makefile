@@ -20,8 +20,8 @@ vim-install:
 		cp -R vim/. "$(UNIX_VIM_HOME)/"; \
 	fi
 	@echo "Writing $(UNIX_VIMRC)..."
-	@if [ "$$(cd "$$(dirname .vimrc)" && pwd -P)/$$(basename .vimrc)" = "$$(cd "$$(dirname "$(UNIX_VIMRC)")" && pwd -P)/$$(basename "$(UNIX_VIMRC)")" ]; then \
-		echo "$(UNIX_VIMRC) already points to this repo; skipping vimrc copy."; \
+	@if [ "$$(python3 -c 'import os; print(os.path.dirname(os.path.realpath("$(UNIX_VIMRC)")) )')" = "$$(python3 -c 'import os; print(os.path.realpath("$(UNIX_VIM_HOME)"))')" ]; then \
+		echo "$(UNIX_VIMRC) is managed inside $(UNIX_VIM_HOME); skipping vimrc copy."; \
 	else \
 		cp .vimrc "$(UNIX_VIMRC)"; \
 	fi

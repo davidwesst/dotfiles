@@ -1,1 +1,48 @@
-execute 'source' fnameescape(expand('~/.vim/vimrc'))
+set nocompatible
+syntax on
+
+let s:vim_dir = expand('<sfile>:p:h')
+
+if has('win32') || has('win64')
+  let s:vim_home = expand('~/vimfiles')
+else
+  let s:vim_home = expand('~/.vim')
+endif
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set smarttab
+set expandtab
+
+set cursorline
+set number
+set relativenumber
+set signcolumn=yes
+set scrolloff=4
+set termguicolors
+
+set showcmd
+set noswapfile
+let s:undo_dir = s:vim_home . '/undodir'
+if !isdirectory(s:undo_dir)
+  call mkdir(s:undo_dir, 'p')
+endif
+let &undodir = s:undo_dir
+set undofile
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+nnoremap <CR> :noh<CR><CR>
+
+" fix for starting in replace mode
+set t_u7=
+
+let s:plugins_config = s:vim_dir . '/plugins-config.vim'
+if filereadable(s:plugins_config)
+  execute 'source' fnameescape(s:plugins_config)
+endif
