@@ -1,7 +1,7 @@
 set nocompatible
 syntax on
 
-let s:vim_dir = expand('<sfile>:p:h')
+let s:vim_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 if has('win32') || has('win64')
   let s:vim_home = expand('~/vimfiles')
