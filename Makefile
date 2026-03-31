@@ -23,6 +23,5 @@ vim-update:
 clean:
 	rm -f "$(UNIX_VIMRC)"
 	rm -rf "$(UNIX_VIM_HOME)"
-	rm -f ~/.local/share/fonts/Cousine*.ttf
 	rm -rf ~/.oh-my-bash/
 	rm -rf ~/.asdf/
